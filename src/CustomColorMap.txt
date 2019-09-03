@@ -1,0 +1,56 @@
+#ifndef COLOR_MAP
+#define COLOR_MAP
+
+#pragma once
+sf::Color ColorMap(float value)
+{
+
+	if (value <= 0.105714)
+	{
+		float increment = (value - 0.000000) / (0.105714 - 0.000000);
+		float r = 255 + (167 - 255) * increment;
+		float g = 255 + (22 - 255) * increment;
+		float b = 150 + (255 - 150) * increment;
+
+		return sf::Color(r, g, b);
+	}
+	if (value <= 0.602857)
+	{
+		float increment = (value - 0.105714) / (0.602857 - 0.105714);
+		float r = 167 + (28 - 167) * increment;
+		float g = 22 + (255 - 22) * increment;
+		float b = 255 + (255 - 255) * increment;
+
+		return sf::Color(r, g, b);
+	}
+	if (value <= 0.731429)
+	{
+		float increment = (value - 0.602857) / (0.731429 - 0.602857);
+		float r = 28 + (53 - 28) * increment;
+		float g = 255 + (155 - 255) * increment;
+		float b = 255 + (255 - 255) * increment;
+
+		return sf::Color(r, g, b);
+	}
+	if (value <= 0.834286)
+	{
+		float increment = (value - 0.731429) / (0.834286 - 0.731429);
+		float r = 53 + (255 - 53) * increment;
+		float g = 155 + (65 - 155) * increment;
+		float b = 255 + (155 - 255) * increment;
+
+		return sf::Color(r, g, b);
+	}
+	if (value <= 1.000000)
+	{
+		float increment = (value - 0.834286) / (1.000000 - 0.834286);
+		float r = 255 + (153 - 255) * increment;
+		float g = 65 + (0 - 65) * increment;
+		float b = 155 + (0 - 155) * increment;
+
+		return sf::Color(r, g, b);
+	}
+	return sf::Color(255,255,255);
+}
+
+#endif
